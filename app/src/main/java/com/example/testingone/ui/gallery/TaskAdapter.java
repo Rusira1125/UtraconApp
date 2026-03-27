@@ -3,6 +3,7 @@ package com.example.testingone.ui.gallery;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,9 +16,16 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
 
     private List<TaskModel> taskList;
+    private OnTaskActionListener listener;
 
-    public TaskAdapter(List<TaskModel> taskList) {
+    public interface OnTaskActionListener {
+        void onEdit(TaskModel task, int position);
+        void onDelete(TaskModel task, int position);
+    }
+
+    public TaskAdapter(List<TaskModel> taskList, OnTaskActionListener listener) {
         this.taskList = taskList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -34,6 +42,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         holder.textProjectName.setText(task.getProjectName());
         holder.textTaskOne.setText(task.getTaskOne());
         holder.textDate.setText(task.getDate());
+
+        holder.btnEdit.setOnClickListener(v -> listener.onEdit(task, position));
+        holder.btnDelete.setOnClickListener(v -> listener.onDelete(task, position));
     }
 
     @Override
@@ -43,12 +54,15 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
     public static class TaskViewHolder extends RecyclerView.ViewHolder {
         TextView textProjectName, textTaskOne, textDate;
+        Button btnEdit, btnDelete;
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
             textProjectName = itemView.findViewById(R.id.textProjectName);
             textTaskOne = itemView.findViewById(R.id.textTaskOne);
             textDate = itemView.findViewById(R.id.textDate);
+            btnEdit = itemView.findViewById(R.id.btnEdit);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
         }
     }
 }

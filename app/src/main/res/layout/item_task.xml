@@ -18,16 +18,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:text="Project Name" />
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textTaskOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textSize="14sp"
-            android:text="Task" />
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/textDate"
@@ -35,8 +33,33 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:textSize="12sp"
-            android:textColor="#888888"
-            android:text="Date" />
+            android:textColor="#888888"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="Edit"
+                android:backgroundTint="#2196F3"/>
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="Delete"
+                android:backgroundTint="#F44336"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
