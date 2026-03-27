@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Utracon</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Utracon Group</string>
+    <string name="nav_header_subtitle">Utracon.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Add</string>
+    <string name="menu_gallery">View</string>
+    <string name="menu_slideshow">----</string>
+
+    <string name="deploymentID">https://script.google.com/macros/s/AKfycby5MMfmVg1SJFR7Vn3NbhB77LMju-WKclyhj9l25F2z8lu_8SBj7DWLyuTyFQ0ge3A/exec</string>
+
+</resources>
